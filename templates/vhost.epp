@@ -1,0 +1,7 @@
+<VirtualHost *:<%= $listenport %>>
+    DocumentRoot "<%= $documentroot %>"
+    ServerName <%= $servername %>
+
+    # Other directives here
+    <%= $custom_directives %>
+</VirtualHost>
