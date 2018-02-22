@@ -18,6 +18,7 @@ class httpd (
     context => "/files${httpd::params::conffile}",
     require => Package[$httpd::params::pkg],
     changes => [
+      "set directive[self::directive='Listen'] Listen",
       "set directive[self::directive='Listen']/arg ${listen}",
     ],
   }
