@@ -7,10 +7,10 @@
 # @example
 #   httpd::vhost { 'namevar': }
 define httpd::vhost(
-  $documentroot,
-  $servername        = $name,
-  $listenport        = '80',
-  $custom_directives = '',
+  Httpd::Path       $documentroot,
+  Httpd::Servername $servername = $name,
+  Httpd::Listen     $listenport = 80,
+  String            $custom_directives = '',
 ) {
   include httpd
   include httpd::params
